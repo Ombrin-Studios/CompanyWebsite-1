@@ -243,7 +243,11 @@
                     <label for="message">Project Details *</label>
                     <textarea id="message" name="message" required aria-required="true" placeholder="Tell us about your project..."></textarea>
                 </div>
-                <button type="submit" class="submit-button">Request Free Estimate</button>
+                <button type="submit" class="submit-button" id="submitBtn">
+                    <span class="btn-text">Request Free Estimate</span>
+                    <span class="btn-loading" style="display: none;">Sending...</span>
+                </button>
+                <div id="form-message" style="margin-top: 1rem; text-align: center; display: none;"></div>
             </form>
         </div>
     </section>

@@ -85,9 +85,23 @@ document.querySelectorAll('.before-after-wrapper').forEach(wrapper => {
     });
 });
 
-// Form submission handler
+// Form submission handler using Formspree
+// IMPORTANT: Replace 'YOUR_FORMSPREE_ENDPOINT' with your actual Formspree form endpoint
+// Get it from https://formspree.io/ after creating a form
+// See EMAIL_SETUP.md for detailed instructions
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
+    
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoading = submitBtn.querySelector('.btn-loading');
+    const formMessage = document.getElementById('form-message');
+    
+    // Show loading state
+    submitBtn.disabled = true;
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'inline';
+    formMessage.style.display = 'none';
     
     // Get form values
     const formData = {
@@ -95,18 +109,51 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         email: document.getElementById('email').value,
         phone: document.getElementById('phone').value,
         service: document.getElementById('service').value,
-        message: document.getElementById('message').value
+        message: document.getElementById('message').value,
+        _replyto: document.getElementById('email').value, // For reply-to functionality
+        _subject: 'New Contact Form Submission from ' + document.getElementById('name').value
     };
 
-    // Simulate form submission (in production, this would send to a server)
-    alert('Thank you for your inquiry! We will contact you within 24 hours.\n\n' +
-          'Name: ' + formData.name + '\n' +
-          'Email: ' + formData.email + '\n' +
-          'Phone: ' + formData.phone + '\n' +
-          'Service: ' + formData.service);
-    
-    // Reset form
-    this.reset();
+    // Send email using Formspree
+    // Replace 'YOUR_FORMSPREE_ENDPOINT' with your Formspree form URL
+    // Example: 'https://formspree.io/f/YOUR_FORM_ID'
+    fetch('https://formspree.io/f/xreebapd', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(function(response) {
+        if (response.ok) {
+            // Success
+            formMessage.style.display = 'block';
+            formMessage.style.color = '#4CAF50';
+            formMessage.style.fontWeight = '600';
+            formMessage.textContent = '✓ Thank you! Your message has been sent. We will contact you within 24 hours.';
+            
+            // Reset form
+            document.getElementById('contactForm').reset();
+        } else {
+            throw new Error('Form submission failed');
+        }
+    })
+    .catch(function(error) {
+        // Error
+        formMessage.style.display = 'block';
+        formMessage.style.color = '#f44336';
+        formMessage.style.fontWeight = '600';
+        formMessage.textContent = '✗ Sorry, there was an error sending your message. Please try again or call us directly at (480) 213-2445.';
+        
+        console.error('Formspree Error:', error);
+    })
+    .finally(function() {
+        // Reset button state
+        submitBtn.disabled = false;
+        btnText.style.display = 'inline';
+        btnLoading.style.display = 'none';
+    });
 });
 
 // Mobile menu toggle (basic implementation)
