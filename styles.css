@@ -27,6 +27,9 @@ body {
     overflow-x: hidden;
 }
 
+.accentBackground {
+    background-color: #201d1d;
+}
 /* Header & Navigation */
 header {
     position: fixed;
@@ -229,7 +232,7 @@ section {
 
 #services .section-title,
 #services .section-subtitle {
-    max-width: 1200px;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 2rem;
@@ -241,17 +244,18 @@ section {
     gap: 3rem;
     margin-top: 3rem;
     width: 100%;
-    max-width: none;
+    max-width: 1400px;
     margin-left: 0;
     margin-right: 0;
     align-items: flex-start;
+    transition: margin-left 0.2s ease, max-width 0.1s ease;
 }
 
 .service-card {
-    background: var(--white);
+    background-color: var(--white);
     border-radius: 16px;
-    width: min(72vw, 900px);
-    min-width: clamp(250px, 20vw, 450px);
+    width: min(80vw, 1100px);
+    min-width: clamp(280px, 28vw, 520px);
     display: flex;
     margin-left: 0;
     position: relative;
@@ -259,7 +263,6 @@ section {
     justify-content: space-between;
     transition: all 0.3s ease;
     opacity: 0;
-    gap: 2.5rem;
     transform: translateY(30px);
     overflow: hidden;
     align-self: flex-start;
@@ -290,9 +293,12 @@ section {
     flex: 1;
     min-width: 200px;
     text-align: left;
+    padding: 15px 20px 0px 20px
 }
 
-
+.service-padding-fix {
+    padding-left: -15px;
+}
 .service-card.visible {
     opacity: 1;
     transform: translateY(0);
@@ -804,7 +810,7 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 770px) {
     .nav-links {
         display: flex;
         flex-direction: column;
@@ -955,7 +961,7 @@ footer {
 }
 
 /* Mobile adjustments */
-@media (max-width: 768px) {
+@media (max-width: 770px) {
     .gallery-slider {
         height: 300px;
     }
@@ -982,7 +988,20 @@ footer {
     }
     .service-card {
         border-radius: 16px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 305px;    
     }
 
 
+}
+
+@media(min-width: 1824px) {
+    .services-grid {
+        max-width: 1824px;
+    }
+
+    .picture-left {
+        margin-left: 40px;
+    }
 }
