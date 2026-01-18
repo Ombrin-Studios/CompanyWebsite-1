@@ -5,76 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Painting of all types specializing in Residential House Painting with Dunn-Edwards Paint. Drywall and stucco repair. Licensed, Bonded & Insured.">
     <title>Gabriel's Home Improvements LLC - Transform Your Home</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- ✅ FIXES ADDED HERE (minimal, safe) -->
+    <style>
+        /* Prevent content from hiding under fixed header */
+        body {
+            padding-top: 90px;
+        }
+
+        /* Square service images */
+        .service-image-wrapper {
+            width: 100%;
+            height: 160px;
+            background: #f4ede1;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+        }
+
+        .service-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* NO ZOOM */
+        }
+    </style>
 </head>
+
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <a href="#" class="logo">Gabriel's Home Improvements LLC</a>
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#why-us">Why Us</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <!--<h1>Transform Your Home Into Your Dream Space</h1>-->
-            <h1>Invest in Your Home with Lasting, Quality Work </h1>
-            <p>Interior & Exterior Painting • Remodeling • Stucco & Drywall Repairs</p>
-            <div class="credentials">
-                <span class="credential-badge"> ✓ Licensed</span>
-                <span class="credential-badge"> ✓ Bonded</span>
-                <span class="credential-badge"> ✓ Insured</span>
-            </div>
-            <a href="#contact" class="cta-button">Get Free Quote</a>
-        </div>
-        <div class="scroll-indicator" aria-hidden="true"></div>
-    </section>
+<!-- Header -->
+<header>
+    <nav>
+        <a href="#" class="logo">Gabriel's Home Improvements LLC</a>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+    </nav>
+</header>
 
-    <!-- Services Section -->
-    <section id="services">
-        <h2 class="section-title">Our Services</h2>
-        <p class="section-subtitle">Residential painting, Remodeling, and Repair services using premium Dunn-Edwards paints for a durable, professional finish.</p>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><i class="bi bi-paint-bucket" style="transform: translateX(4px);"></i></div>
-                <h3>Interior Painting</h3>
-                <p>Update your rooms with clean, sharp interior painting and professional prep for a modern look you will LOVE.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="bi bi-house-door-fill"></i></div>
-                <h3>Exterior Painting</h3>
-                <p>Protect your home and boost curb appeal with stunning, professional paint with long-lasting finishes.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="bi bi-hammer"></i></div>
-                <h3>Remodeling</h3>
-                <p>From kitchen and bathroom upgrades to larger home remodels, we create beautiful spaces designed around your needs. Quality craftsmanship and clear communication from start to finish.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="bi bi-hammer"></i></div>
-                <h3>Drywall & Stucco Repair</h3>
-                <p>Fix cracks, holes, and water damage with seamless drywall and stucco repairs that blend with your existing texture. We restore your walls and ceilings so it looks like the damage never happened.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="bi bi-water"></i></div>
-                <h3>Power Washing</h3>
-                <p>Restore your home's exterior with our professional power washing services. Remove dirt, grime, and stains from decks, driveways, and siding to bring back the original beauty of your home.</p>
-            </div>
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Invest in Your Home with Lasting, Quality Work</h1>
+        <p>Interior & Exterior Painting • Remodeling • Stucco & Drywall Repairs</p>
+
+        <div class="credentials">
+            <span class="credential-badge">✓ Licensed</span>
+            <span class="credential-badge">✓ Bonded</span>
+            <span class="credential-badge">✓ Insured</span>
         </div>
-    </section>
+
+        <a href="#contact" class="cta-button">Get Free Quote</a>
+    </div>
+    <div class="scroll-indicator" aria-hidden="true"></div>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-subtitle">
+        Residential painting, Remodeling, and Repair services using premium Dunn-Edwards paints for a durable, professional finish.
+    </p>
+
+    <div class="services-grid">
+
+        <div class="service-card">
+            <div class="service-image-wrapper">
+                <img src="Images/InteriorImage.png" alt="Interior Painting">
+            </div>
+            <h3>Interior Painting</h3>
+            <p>Update your rooms with clean, sharp interior painting and professional prep for a modern look you will LOVE.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image-wrapper">
+                <img src="Images/ExteriorImage.png" alt="Exterior Painting">
+            </div>
+            <h3>Exterior Painting</h3>
+            <p>Protect your home and boost curb appeal with stunning, professional paint with long-lasting finishes.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image-wrapper">
+                <img src="Images/RemodelImage.png" alt="Remodeling">
+            </div>
+            <h3>Remodeling</h3>
+            <p>From kitchen and bathroom upgrades to larger home remodels, we create beautiful spaces designed around your needs.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image-wrapper">
+                <img src="Images/StuccoImage.png" alt="Drywall and Stucco Repair">
+            </div>
+            <h3>Drywall & Stucco Repair</h3>
+            <p>Fix cracks, holes, and water damage with seamless drywall and stucco repairs that blend with your existing texture.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image-wrapper">
+                <img src="Images/PowerWashingImage.jpg" alt="Power Washing">
+            </div>
+            <h3>Power Washing</h3>
+            <p>Restore your home's exterior with professional power washing services.</p>
+        </div>
+
+    </div>
+</section>
 
     <!-- Why Choose Us Section -->
     <section id="why-us">
@@ -88,7 +138,7 @@
             </p>
             <div class="features-grid">
                 <div class="feature-item">
-                    <div class="feature-icon"><i class="bi bi-patch-check"></i></div>
+                    <div class="feature-icon"><p>🛡️</p></div>
                     <h3>Licensed, Bonded & Insured</h3>
                     <p>You're fully protected on every job. You can relax knowing your home is in the best of hands</p>
                 </div>
@@ -102,7 +152,7 @@
                     <p>Decades of hands-on experience in residential painting, remodeling, and repairs—so your project is done right the first time.</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon"><i class="bi bi-star-fill"></i></div>
+                    <div class="feature-icon"><p>⭐</p></div>
                     <h3>Quality Workmanship</h3>
                     <p>Careful prep, clean lines, and durable materials—no shortcuts. We focus on the details you'll see every day so your home looks great for years.</p>
                 </div>
@@ -160,6 +210,26 @@
         </div>
     </section>
 
+    <!--NEW ADDITION-->
+    <!-- Photo Gallery Slider Section -->
+<section id="photo-gallery">
+    <h2 class="section-title">More of Our Work</h2>
+    <p class="section-subtitle">
+        A closer look at the quality and care we bring to every project
+    </p>
+
+    <div class="gallery-slider-container">
+        <button class="gallery-nav left" aria-label="Previous image">&#10094;</button>
+
+        <div class="gallery-slider">
+            <img id="gallery-slide-image" src="Images/gallerypic10.png" alt="Project gallery image">
+        </div>
+
+        <button class="gallery-nav right" aria-label="Next image">&#10095;</button>
+    </div>
+</section>
+
+
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <h2 class="section-title">What Our Customers Say</h2>
@@ -167,18 +237,18 @@
         <div class="testimonials-grid">
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"Outstanding work! They transformed our entire kitchen and the quality is exceptional. Professional, timely, and reasonably priced. Highly recommend!"</p>
-                <div class="testimonial-author">- Sarah Johnson</div>
+                <p class="testimonial-text">"Outstanding work, They painted our entire house and the quality is exceptional. Isabel was professional, timely, and reasonably priced. Highly recommend!"</p>
+                <div class="testimonial-author">- John Ludlow</div>
             </div>
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"The exterior painting job exceeded our expectations. The team was clean, courteous, and the finish is flawless. Our home looks brand new!"</p>
-                <div class="testimonial-author">- Michael Chen</div>
+                <p class="testimonial-text">"The interior painting job exceeded our expectations, Isabel's team was clean, courteous, and the paint looks perfect. They accomodated all of our requests and were quick."</p>
+                <div class="testimonial-author">- Ethan Vasquez</div>
             </div>
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"From initial consultation to final walkthrough, the experience was seamless. They repaired our drywall perfectly and you can't even tell where the damage was!"</p>
-                <div class="testimonial-author">- Emily Rodriguez</div>
+                <p class="testimonial-text">"Needed some stucco and drywall holes fixed in our rental home and Isabel was quick to respond and give me an estimate. We decided to go with her and the house looks brand new. Will definitely use Isabel for future projects."</p>
+                <div class="testimonial-author">- Tyler Burrer</div>
             </div>
         </div>
     </section>
@@ -191,28 +261,28 @@
             <div class="contact-info">
                 <h3>Contact Information</h3>
                 <div class="contact-info-item">
-                    <div class="contact-info-icon"><i class="bi bi-telephone-fill"></i></div>
+                    <div class="contact-info-icon"><p>☎️</p></div>
                     <div>
                         <strong>Phone</strong><br>
                         <a href="tel:+1234567890">(480) 213-2445</a>
                     </div>
                 </div>
                 <div class="contact-info-item">
-                    <div class="contact-info-icon"><i class="bi bi-envelope-fill"></i></div>
+                    <div class="contact-info-icon"><p>📧</p></div>
                     <div>
                         <strong>Email</strong><br>
                         <a href="mailto:info@premiumhomeimprovements.com">Isabellmcmillan78@yahoo.com</a>
                     </div>
                 </div>
                 <div class="contact-info-item">
-                    <div class="contact-info-icon"><i class="bi bi-geo-fill"></i></div>
+                    <div class="contact-info-icon"><p>🏙️</p></div>
                     <div>
                         <strong>Service Area</strong><br>
                         Serving the Greater Metropolitan Area
                     </div>
                 </div>
                 <div class="contact-info-item">
-                    <div class="contact-info-icon"><i class="bi bi-clock-fill"></i></div>
+                    <div class="contact-info-icon"><p>📅</p></i></div>
                     <div>
                         <strong>Business Hours</strong><br>
                         Monday - Saturday: 7:00 AM - 7:00 PM<br>
@@ -266,12 +336,9 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Gabriel's Home Improvements LLC</h3>
-                <p>Home Improvement Hidden Gem</p>
+                <p>Home Improvement Services</p>
                 <p>Based in Chandler, AZ</p>
-                <div class="social-links">
-                    <a href="#" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                </div>
+                
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>

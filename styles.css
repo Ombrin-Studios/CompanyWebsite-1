@@ -805,4 +805,80 @@ footer {
     }
 }
 
+/* ===============================
+   Photo Gallery Slider Section
+   =============================== */
+
+#photo-gallery {
+    margin-top: 4rem;
+}
+
+.gallery-slider-container {
+    position: relative;
+    max-width: 900px;
+    margin: 3rem auto 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    background: var(--white);
+}
+
+.gallery-slider {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* NO ZOOM */
+    background: var(--background);
+    transition: opacity 0.4s ease;
+}
+
+/* Navigation buttons */
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.35);
+    color: white;
+    border: none;
+    width: 55px;
+    height: 55px;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease, transform 0.2s ease;
+    z-index: 5;
+}
+
+.gallery-nav:hover {
+    background: rgba(0, 0, 0, 0.55);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-nav.left {
+    left: 15px;
+}
+
+.gallery-nav.right {
+    right: 15px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .gallery-slider {
+        height: 300px;
+    }
+
+    .gallery-nav {
+        width: 45px;
+        height: 45px;
+        font-size: 1.6rem;
+    }
+}
 

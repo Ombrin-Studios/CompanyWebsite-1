@@ -190,3 +190,69 @@ window.addEventListener('scroll', () => {
 });
 
 
+// ===============================
+// Photo Gallery Auto Slider
+// ===============================
+
+const galleryImages = [
+    'Images/gallerypic10.png',
+    'Images/gallerypic11.png',
+    'Images/gallerypic9.png',
+    'Images/gallerypic8.png',
+    'Images/gallerypic7.png',
+    'Images/gallerypic6.png',
+    'Images/gallerypic12.png',
+    'Images/gallerypic3.png',
+    'Images/gallerypic4.png',
+    'Images/gallerypic1.png',
+    'Images/gallerypic2.png',
+    'Images/gallerypic3.png',
+    'Images/gallerypic5.png',
+    'Images/gallerypic13.png'
+];
+
+let currentGalleryIndex = 0;
+const galleryImgElement = document.getElementById('gallery-slide-image');
+const galleryLeftBtn = document.querySelector('.gallery-nav.left');
+const galleryRightBtn = document.querySelector('.gallery-nav.right');
+
+function showGalleryImage(index) {
+    galleryImgElement.style.opacity = 0;
+
+    setTimeout(() => {
+        galleryImgElement.src = galleryImages[index];
+        galleryImgElement.style.opacity = 1;
+    }, 200);
+}
+
+function nextGalleryImage() {
+    currentGalleryIndex = (currentGalleryIndex + 1) % galleryImages.length;
+    showGalleryImage(currentGalleryIndex);
+}
+
+function prevGalleryImage() {
+    currentGalleryIndex =
+        (currentGalleryIndex - 1 + galleryImages.length) % galleryImages.length;
+    showGalleryImage(currentGalleryIndex);
+}
+
+if (galleryLeftBtn && galleryRightBtn) {
+    galleryLeftBtn.addEventListener('click', () => {
+        prevGalleryImage();
+        resetGalleryInterval();
+    });
+
+    galleryRightBtn.addEventListener('click', () => {
+        nextGalleryImage();
+        resetGalleryInterval();
+    });
+}
+
+// Auto-cycle every 3.5 seconds
+let galleryInterval = setInterval(nextGalleryImage, 3500);
+
+function resetGalleryInterval() {
+    clearInterval(galleryInterval);
+    galleryInterval = setInterval(nextGalleryImage, 3500);
+}
+
