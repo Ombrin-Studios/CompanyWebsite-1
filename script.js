@@ -117,7 +117,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     // Send email using Formspree
     // Replace 'YOUR_FORMSPREE_ENDPOINT' with your Formspree form URL
     // Example: 'https://formspree.io/f/YOUR_FORM_ID'
-    fetch('https://formspree.io/f/xreebapd', {
+    fetch('https://formspree.io/f/mykkeqaz', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

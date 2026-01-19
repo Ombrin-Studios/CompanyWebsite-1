@@ -26,10 +26,11 @@ body {
     background-color: var(--background);
     overflow-x: hidden;
 }
-
+/*
 .accentBackground {
     background-color: #201d1d;
 }
+*/
 /* Header & Navigation */
 header {
     position: fixed;
