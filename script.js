@@ -205,20 +205,20 @@ window.addEventListener('scroll', () => {
 // ===============================
 
 const galleryImages = [
-    'Images/gallerypic10.png',
-    'Images/gallerypic11.png',
-    'Images/gallerypic9.png',
-    'Images/gallerypic8.png',
-    'Images/gallerypic7.png',
-    'Images/gallerypic6.png',
-    'Images/gallerypic12.png',
-    'Images/gallerypic3.png',
-    'Images/gallerypic4.png',
-    'Images/gallerypic1.png',
-    'Images/gallerypic2.png',
-    'Images/gallerypic3.png',
-    'Images/gallerypic5.png',
-    'Images/gallerypic13.png'
+    'Images/gallerypic10.PNG',
+    'Images/gallerypic11.PNG',
+    'Images/gallerypic9.PNG',
+    'Images/gallerypic8.PNG',
+    'Images/gallerypic7.PNG',
+    'Images/gallerypic6.PNG',
+    'Images/gallerypic12.PNG',
+    'Images/gallerypic3.PNG',
+    'Images/gallerypic4.PNG',
+    'Images/gallerypic1.PNG',
+    'Images/gallerypic2.PNG',
+    'Images/gallerypic3.PNG',
+    'Images/gallerypic5.PNG',
+    'Images/gallerypic13.PNG'
 ];
 
 let currentGalleryIndex = 0;
