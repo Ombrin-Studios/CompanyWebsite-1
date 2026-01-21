@@ -117,7 +117,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     // Send email using Formspree
     // Replace 'YOUR_FORMSPREE_ENDPOINT' with your Formspree form URL
     // Example: 'https://formspree.io/f/YOUR_FORM_ID'
-    fetch('https://formspree.io/f/xreebapd', {
+    fetch('https://formspree.io/f/mykkeqaz', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -156,20 +156,30 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     });
 });
 
-// Mobile menu toggle (basic implementation)
+// Mobile menu toggle
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+const nav = document.querySelector('nav');
 
-if (mobileMenuToggle) {
+if (mobileMenuToggle && nav) {
     mobileMenuToggle.addEventListener('click', function() {
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '100%';
-        navLinks.style.left = '0';
-        navLinks.style.right = '0';
-        navLinks.style.background = 'rgba(59, 47, 47, 0.98)';
-        navLinks.style.padding = '2rem';
+        const isOpen = nav.classList.toggle('nav-open');
+        mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    nav.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                nav.classList.remove('nav-open');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && nav.classList.contains('nav-open')) {
+            nav.classList.remove('nav-open');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        }
     });
 }
 
@@ -190,3 +200,64 @@ window.addEventListener('scroll', () => {
 });
 
 
+// ===============================
+// Photo Gallery Auto Slider
+// ===============================
+
+const galleryImages = [
+    'Images/gallerypic6.PNG',
+    'Images/gallerypic3.PNG',
+    'Images/gallerypic4.PNG',
+    'Images/gallerypic10.PNG',
+    'Images/gallerypic12.PNG',
+    'Images/gallerypic7.PNG',
+    'Images/gallerypic9.PNG',
+    'Images/gallerypic11.PNG',
+    'Images/gallerypic1.PNG',
+    'Images/gallerypic13.PNG'
+];
+
+let currentGalleryIndex = 0;
+const galleryImgElement = document.getElementById('gallery-slide-image');
+const galleryLeftBtn = document.querySelector('.gallery-nav.left');
+const galleryRightBtn = document.querySelector('.gallery-nav.right');
+
+function showGalleryImage(index) {
+    galleryImgElement.style.opacity = 0;
+
+    setTimeout(() => {
+        galleryImgElement.src = galleryImages[index];
+        galleryImgElement.style.opacity = 1;
+    }, 200);
+}
+
+function nextGalleryImage() {
+    currentGalleryIndex = (currentGalleryIndex + 1) % galleryImages.length;
+    showGalleryImage(currentGalleryIndex);
+}
+
+function prevGalleryImage() {
+    currentGalleryIndex =
+        (currentGalleryIndex - 1 + galleryImages.length) % galleryImages.length;
+    showGalleryImage(currentGalleryIndex);
+}
+
+if (galleryLeftBtn && galleryRightBtn) {
+    galleryLeftBtn.addEventListener('click', () => {
+        prevGalleryImage();
+        resetGalleryInterval();
+    });
+
+    galleryRightBtn.addEventListener('click', () => {
+        nextGalleryImage();
+        resetGalleryInterval();
+    });
+}
+
+// Auto-cycle every 3.5 seconds
+let galleryInterval = setInterval(nextGalleryImage, 3500);
+
+function resetGalleryInterval() {
+    clearInterval(galleryInterval);
+    galleryInterval = setInterval(nextGalleryImage, 3500);
+}
