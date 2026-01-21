@@ -205,19 +205,15 @@ window.addEventListener('scroll', () => {
 // ===============================
 
 const galleryImages = [
-    'Images/gallerypic10.PNG',
-    'Images/gallerypic11.PNG',
-    'Images/gallerypic9.PNG',
-    'Images/gallerypic8.PNG',
-    'Images/gallerypic7.PNG',
     'Images/gallerypic6.PNG',
-    'Images/gallerypic12.PNG',
     'Images/gallerypic3.PNG',
     'Images/gallerypic4.PNG',
+    'Images/gallerypic10.PNG',
+    'Images/gallerypic12.PNG',
+    'Images/gallerypic7.PNG',
+    'Images/gallerypic9.PNG',
+    'Images/gallerypic11.PNG',
     'Images/gallerypic1.PNG',
-    'Images/gallerypic2.PNG',
-    'Images/gallerypic3.PNG',
-    'Images/gallerypic5.PNG',
     'Images/gallerypic13.PNG'
 ];
 
