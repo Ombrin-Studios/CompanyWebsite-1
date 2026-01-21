@@ -268,8 +268,9 @@ A “Zoom-Safe” Spacing Checklist
     background-color: var(--white);
     border-radius: 16px;
     width: min(80vw, 1100px);
-    min-width: clamp(280px, 28vw, 520px);
     max-height: clamp(360px,4vw,480px);
+            min-height: clamp(300px, 45vw, 450px);
+        min-width: clamp(450px, 45vw, 600px);
     display: flex;
     margin-left: 0;
     position: relative;
@@ -278,7 +279,6 @@ A “Zoom-Safe” Spacing Checklist
     transition: all 0.3s ease;
     opacity: 0;
     transform: translateY(30px);
-    overflow: hidden;
     align-self: flex-start;
 }
 
@@ -298,7 +298,7 @@ A “Zoom-Safe” Spacing Checklist
 
 .service-image-wrap {
   width: 520px;          /* desktop image size */
-  min-height: clamp(150px, 4vw, 250px);
+  min-height: clamp(150px, 20vw, 250px);
   overflow: hidden;
   border-radius: 16px;   /* optional */
 }
@@ -887,10 +887,6 @@ footer {
         gap: 2rem;
     }
 
-    #services {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-    }
     .services-grid,
     .features-grid,
     .testimonials-grid {
@@ -901,10 +897,9 @@ footer {
         max-height: none;
         flex-direction: column;
         align-items: flex-start;
-        width: 100%;
         border-radius: 0;
-        min-height: clamp(300px, 4vw, 650px);
-        min-width: clamp(450px, 4vw, 600px);
+        min-height: clamp(300px, 45vw, 450px);
+        width: 700px;
         border-radius: 16px;
     }
     .service-card p {
@@ -920,8 +915,7 @@ footer {
     .service-image-wrap {   
         border-radius: 16px;
         width: 100%;
-        height: clamp(500px,4vw,700px);
-        aspect-ratio: 4 / 3;
+        height: 500px;
     }
     .service-image {
         width: 100%;
@@ -1082,8 +1076,8 @@ footer {
         align-items: flex-start;
         width: 100%;
         border-radius: 0;
-        min-height: clamp(300px, 4vw, 450px);
-        min-width: clamp(450px, 4vw, 600px);
+        min-height: clamp(300px, 45vw, 450px);
+        min-width: clamp(450px, 45vw, 600px);
         border-radius: 16px;
     }
 
