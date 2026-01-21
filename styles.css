@@ -14,7 +14,6 @@
     --text-dark: #2B211F;     /* rich coffee text */
     --text-light: #7A6A64;    /* soft latte text */
 }
-
 html {
     scroll-behavior: smooth;
 }
@@ -63,6 +62,7 @@ nav {
     font-weight: 500;
     color: var(--white);
     text-decoration: none;
+    padding-right: 1rem;
 }
 
 .nav-links {
