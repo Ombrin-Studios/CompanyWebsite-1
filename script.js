@@ -212,7 +212,7 @@ const galleryImages = [
     'Images/gallerypic12.PNG',
     'Images/gallerypic7.PNG',
     'Images/gallerypic9.PNG',
-    'Images/gallerypic11.PNG',
+    'Images/ExteriorImage.PNG',
     'Images/gallerypic1.PNG',
     'Images/gallerypic13.PNG'
 ];
